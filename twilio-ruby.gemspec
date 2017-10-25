@@ -24,12 +24,14 @@ Gem::Specification.new do |spec|
   spec.extra_rdoc_files = ['README.md', 'LICENSE.md']
   spec.rdoc_options = ['--line-numbers', '--inline-source', '--title', 'twilio-ruby', '--main', 'README.md']
 
-  if RUBY_PLATFORM == 'java'
-    spec.add_dependency('libxml-jruby')
-  else
-    spec.add_dependency('libxml-ruby', '>= 2.0', '< 4.0')
-  end
+  # if RUBY_PLATFORM == 'java'
+  #   spec.add_dependency('libxml-jruby')
+  # else
+  #   spec.add_dependency('libxml-ruby', '>= 2.0', '< 4.0')
+  # end
 
+  spec.add_dependency('nokogiri')
+  
   spec.add_dependency('jwt', '~> 1.5')
   spec.add_dependency('faraday', '~>0.9')
   spec.add_dependency('jruby-openssl') if RUBY_PLATFORM == 'java'
